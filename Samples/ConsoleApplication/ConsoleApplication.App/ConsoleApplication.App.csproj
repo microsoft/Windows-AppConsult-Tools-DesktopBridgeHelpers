@@ -56,7 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\DesktopBridge.Helpers\DesktopBridge.Helpers.csproj">
-      <Project>{1e4b9f8e-2492-4ac0-b82c-8f9363720712}</Project>
+      <Project>{d76ec0c3-9edf-4917-9541-1ae875746472}</Project>
       <Name>DesktopBridge.Helpers</Name>
     </ProjectReference>
   </ItemGroup>

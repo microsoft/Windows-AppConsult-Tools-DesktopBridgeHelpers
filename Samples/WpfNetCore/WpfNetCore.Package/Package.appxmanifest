@@ -7,12 +7,12 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="daf45316-6d0b-4425-beb2-9bef64b3d191"
+    Name="0683c107-cb10-42a3-ad0e-ccd9e43b4ff2"
     Publisher="CN=mpagani"
     Version="1.0.0.0" />
 
   <Properties>
-    <DisplayName>ConsoleApplication.Package</DisplayName>
+    <DisplayName>WpfNetCore.Package</DisplayName>
     <PublisherDisplayName>mpagani</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
   </Properties>
@@ -31,8 +31,8 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="ConsoleApplication.Package"
-        Description="ConsoleApplication.Package"
+        DisplayName="WpfNetCore.Package"
+        Description="WpfNetCore.Package"
         BackgroundColor="transparent"
         Square150x150Logo="Images\Square150x150Logo.png"
         Square44x44Logo="Images\Square44x44Logo.png">

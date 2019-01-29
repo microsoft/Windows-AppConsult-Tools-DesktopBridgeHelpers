@@ -34,18 +34,18 @@
   </PropertyGroup>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.props" />
   <PropertyGroup>
-    <ProjectGuid>479ad728-507b-436a-82d9-821179e13a99</ProjectGuid>
+    <ProjectGuid>2b30574c-e498-4f2e-9b66-7b18b701634c</ProjectGuid>
     <TargetPlatformVersion>10.0.17763.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <PackageCertificateKeyFile>WindowsForms.Package_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <EntryPointProjectUniqueName>..\WindowsForms.App\WindowsForms.App.csproj</EntryPointProjectUniqueName>
+    <PackageCertificateKeyFile>WpfNetCore.Package_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <EntryPointProjectUniqueName>..\WpfNetCore.App\WpfNetCore.App.csproj</EntryPointProjectUniqueName>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="WindowsForms.Package_TemporaryKey.pfx" />
+    <None Include="WpfNetCore.Package_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\SplashScreen.scale-200.png" />
@@ -57,7 +57,12 @@
     <Content Include="Images\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WindowsForms.App\WindowsForms.App.csproj" />
+    <ProjectReference Include="..\WpfNetCore.App\WpfNetCore.App.csproj">
+      <DesktopBridgeSelfContained>True</DesktopBridgeSelfContained>
+      <DesktopBridgeIdentifier>$(DesktopBridgeRuntimeIdentifier)</DesktopBridgeIdentifier>
+      <Properties>SelfContained=%(DesktopBridgeSelfContained);RuntimeIdentifier=%(DesktopBridgeIdentifier)</Properties>
+      <SkipGetTargetFrameworkProperties>True</SkipGetTargetFrameworkProperties>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
 </Project>
