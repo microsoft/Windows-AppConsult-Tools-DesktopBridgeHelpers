@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
+    <PackageId>DesktopBridge.Helpers</PackageId>
+    <Authors>Matteo Pagani</Authors>
+    <Version>1.2.2</Version>
+    <Product>DesktopBridge Helpers</Product>
+    <Description>A simple library that can be used in a Win32 app to detect if it's running as native or inside a AppX / MSIX container.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/microsoft/Windows-AppConsult-Tools-DesktopBridgeHelpers</PackageProjectUrl>
+    <PackageTags>msix, appx, windows, .net</PackageTags>
   </PropertyGroup>
 
 </Project>
