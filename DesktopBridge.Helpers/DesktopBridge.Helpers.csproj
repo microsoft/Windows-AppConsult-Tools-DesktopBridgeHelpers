@@ -10,6 +10,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/microsoft/Windows-AppConsult-Tools-DesktopBridgeHelpers</PackageProjectUrl>
     <PackageTags>msix, appx, windows, .net</PackageTags>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
 </Project>
