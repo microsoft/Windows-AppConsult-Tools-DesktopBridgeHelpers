@@ -13,7 +13,7 @@ namespace DesktopBridge
 
         public bool IsRunningAsUwp()
         {
-            if (IsWindows7OrLower)
+            if (!IsWindows8OrHigher)
             {
                 return false;
             }
@@ -30,14 +30,22 @@ namespace DesktopBridge
             }
         }
 
-        private bool IsWindows7OrLower
+        private bool IsWindows8OrHigher
         {
             get
             {
-                int versionMajor = Environment.OSVersion.Version.Major;
-                int versionMinor = Environment.OSVersion.Version.Minor;
-                double version = versionMajor + (double)versionMinor / 10;
-                return version <= 6.1;
+                OperatingSystem osVersion = Environment.OSVersion;
+                if (osVersion.Platform != PlatformID.Win32NT)
+                {
+                    return false;
+                }
+                else
+                {
+                    int versionMajor = osVersion.Version.Major;
+                    int versionMinor = osVersion.Version.Minor;
+                    // Windows 8 is version 6.2.
+                    return versionMajor > 6 || versionMajor == 6 && versionMinor >= 2;
+                }
             }
         }
     }
