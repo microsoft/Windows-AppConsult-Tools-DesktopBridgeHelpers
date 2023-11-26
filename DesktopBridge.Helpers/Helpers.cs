@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using System.Text;
 
 namespace DesktopBridge
 {
-    public class Helpers
+    public unsafe class Helpers
     {
         const long APPMODEL_ERROR_NO_PACKAGE = 15700L;
 
-        [DllImport("kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
-        static extern int GetCurrentPackageFullName(ref int packageFullNameLength, StringBuilder packageFullName);
+        [DllImport("kernel32.dll", ExactSpelling = true)]
+        static extern int GetCurrentPackageFullName(uint* packageFullNameLength, char* packageFullName);
 
         public bool IsRunningAsUwp()
         {
@@ -19,13 +18,8 @@ namespace DesktopBridge
             }
             else
             {
-                int length = 0;
-                StringBuilder sb = new StringBuilder(0);
-                int result = GetCurrentPackageFullName(ref length, sb);
-
-                sb = new StringBuilder(length);
-                result = GetCurrentPackageFullName(ref length, sb);
-
+                uint length = 0;
+                int result = GetCurrentPackageFullName(&length, null);
                 return result != APPMODEL_ERROR_NO_PACKAGE;
             }
         }
